@@ -22,44 +22,61 @@ Built to demonstrate a genuine "builder" workflow: automating the manual process
 - **Data handling:** Pandas
 
 ## 📁 Project Structure
-energy-signal-tracker/
-├── fetch_news.py          # Step 1: pull raw news headlines
-├── structure_signals.py   # Step 2: AI-structure headlines into signals
-├── fetch_prices.py        # Step 3: pull historical price data
-├── forecast.py             # Step 4: generate price forecast
-├── dashboard.py            # Step 5: interactive Streamlit dashboard
-├── raw_headlines.csv       # output of step 1
-├── structured_signals.csv  # output of step 2
-├── energy_prices.csv       # output of step 3
-├── forecast.csv             # output of step 4
-└── .env                     # API keys (not committed)
+
+- `fetch_news.py` — Step 1: pull raw news headlines
+- `structure_signals.py` — Step 2: AI-structure headlines into signals
+- `fetch_prices.py` — Step 3: pull historical price data
+- `forecast.py` — Step 4: generate price forecast
+- `dashboard.py` — Step 5: interactive Streamlit dashboard
+- `raw_headlines.csv` — output of step 1
+- `structured_signals.csv` — output of step 2
+- `energy_prices.csv` — output of step 3
+- `forecast.csv` — output of step 4
+- `.env` — API keys (not committed)
+
 ## 🚀 Setup & Usage
 
-```bash
-git clone <your-repo-url>
-cd energy-signal-tracker
+Clone and enter the project:
 
-python3 -m venv venv
-source venv/bin/activate
-pip install requests python-dotenv google-genai yfinance pandas statsmodels streamlit plotly
+    git clone <your-repo-url>
+    cd energy-signal-tracker
 
-echo "NEWSAPI_KEY=your_key_here" >> .env
-echo "GEMINI_API_KEY=your_key_here" >> .env
+Set up environment:
 
-python3 fetch_news.py
-python3 structure_signals.py
-python3 fetch_prices.py
-python3 forecast.py
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install requests python-dotenv google-genai yfinance pandas statsmodels streamlit plotly
 
-streamlit run dashboard.py
-📊 Dashboard Highlights
-KPI cards — latest TTF gas price, 7-day change, bullish signal count, high-confidence signal count
-Price & Forecast tab — actual vs. forecast price chart, related benchmark comparison
-Market Signals tab — filterable, color-coded feed of AI-structured news signals with reasoning
-Signal Breakdown tab — distribution of signals by direction and event type
-Market Behavior tab — rolling volatility, cross-market correlation heatmap, signal confidence trends
-🎯 Why This Project
+Add your API keys:
+
+    echo "NEWSAPI_KEY=your_key_here" >> .env
+    echo "GEMINI_API_KEY=your_key_here" >> .env
+
+Run the pipeline in order:
+
+    python3 fetch_news.py
+    python3 structure_signals.py
+    python3 fetch_prices.py
+    python3 forecast.py
+
+Launch the dashboard:
+
+    streamlit run dashboard.py
+
+## 📊 Dashboard Highlights
+
+- **KPI cards** — latest TTF gas price, 7-day change, bullish signal count, high-confidence signal count
+- **Price & Forecast tab** — actual vs. forecast price chart, related benchmark comparison
+- **Market Signals tab** — filterable, color-coded feed of AI-structured news signals with reasoning
+- **Signal Breakdown tab** — distribution of signals by direction and event type
+- **Market Behavior tab** — rolling volatility, cross-market correlation heatmap, signal confidence trends
+
+## 🎯 Why This Project
+
 Built as a demonstration of the exact "builder" workflow that modern market analysis increasingly relies on: using AI tools not just conversationally, but programmatically, as part of a real data pipeline, to convert noisy, unstructured information into a decision-ready format, then validating and visualizing it responsibly.
-👤 Author
-Mohammed Shawaiz Hussain
-Portfolio · GitHub · LinkedIn
+
+## 👤 Author
+
+**Mohammed Shawaiz Hussain**
+
+[Portfolio](https://shawaiz05.github.io) · [GitHub](https://github.com/Shawaiz05) · [LinkedIn](https://www.linkedin.com/in/mohammed-shawaiz-hussain-4a12a32aa)
